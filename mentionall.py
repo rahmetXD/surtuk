@@ -48,28 +48,44 @@ rxyzdev_initT = {}
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("👋🏻 ᴍᴇʀʜᴀʙᴀ, ʙᴇɴ ᴀʜʀɪ! ʙᴀᴢı ᴋᴜʟʟᴀɴışʟı ᴏ̈ᴢᴇʟʟɪᴋʟᴇʀᴇ sᴀʜɪᴘ ᴛᴇʟᴇɢʀᴀᴍ ᴜ̈ʏᴇ ᴇᴛɪᴋᴇᴛʟᴇᴍᴇ ʙᴏᴛᴜʏᴜᴍ.\n\n📚 ᴋᴏᴍᴜᴛʟᴀʀı ɢᴏ̈ʀᴍᴇᴋ ɪ̇ᴄ̧ɪɴ /help, ᴋᴏᴍᴜᴛᴜɴᴜ ᴋᴜʟʟᴀɴᴀ ʙɪʟɪʀsɪɴɪᴢ.",
+  await event.reply("👋🏻 ᴍᴇʀʜᴀʙᴀ, ʙᴇɴ ᴀʜʀɪ! ʙᴀᴢı ᴋᴜʟʟᴀɴışʟı ᴏ̈ᴢᴇʟʟɪᴋʟᴇʀᴇ sᴀʜɪᴘ ᴛᴇʟᴇɢʀᴀᴍ ᴜ̈ʏᴇ ᴇᴛɪᴋᴇᴛʟᴇᴍᴇ ʙᴏᴛᴜʏᴜᴍ.\n\n📚 sɪᴢᴇ ʏᴀʀᴅɪᴍᴄɪ ᴏʟᴀʙɪʟᴍᴇᴍ ɪᴄ̧ɪɴ ᴀşşᴀɢ̆ɪᴅᴀᴋɪ ʙᴜᴛᴏɴʟᴀʀɪ ᴋᴜʟʟᴀɴɪɴ!",
                     buttons=(                  
 		                      
                       [Button.url('➕ɢʀᴜʙᴀ ᴇᴋʟᴇ➕', f"https://t.me/{bot_username}?startgroup=a")],
                       [Button.url('📣ᴅᴇsᴛᴇᴋ📣', f"https://t.me/{support}")],
+                      [Button.inline("📚ᴋᴏᴍᴜᴛʟᴀʀ📚", data="help")],
                       [Button.url('🛡ᴏᴡɴᴇʀ🛡', 'https://t.me/rahmetiNC')],
 		                  
                     ),
                     link_preview=False
                    )
 
-@client.on(events.NewMessage(pattern="^/help$"))
+@client.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
-  helptext = "⚙️ ᴍᴇʀʜᴀʙᴀ, ɪ̇şᴛᴇ ᴋᴏᴍᴜᴛʟᴀʀıᴍ ⚙️\n\n » /tag \n - 5 ᴋɪşɪʟɪᴋ ᴇᴛɪᴋᴇᴛ ᴏʟᴜşᴛᴜʀᴜʀ. \n » /otag \n - ᴋᴜʟʟᴀɴıᴄıʟᴀʀı sᴏʀᴜʏʟᴀ ᴇᴛɪᴋᴇᴛʟᴇʀ. \n » /ctag \n - ᴋᴜʟʟᴀɴıᴄıʟᴀʀı ʜᴏş sᴏ̈ᴢʟᴇʀʟᴇ ᴇᴛɪᴋᴇᴛʟᴇʀ. \n » /etag \n - ᴇᴍᴏᴊɪ ɪ̇ʟᴇ ᴇᴛɪᴋᴇᴛ ᴀᴛᴀʀ.\n » /tektag \n - ᴜ̈ʏᴇʟᴇʀɪ ᴛᴇᴋᴇʀ ᴛᴇᴋᴇʀ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /btag \n - ʙᴀʏʀᴀᴋʟı şᴇᴋɪʟᴅᴇ ᴜ̈ʏᴇʟᴇʀɪ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /admins \n - ᴀᴅᴍɪɴʟᴇʀɪ ᴅᴜ̈ᴢᴇɴʟɪ şᴇᴋɪʟᴅᴇ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /slap \n - ʙɪ̇ʀ ᴋᴜʟʟᴀɴɪᴄɪʏɪ ᴛʀᴏʟʟᴇʀ.\n » /eros \n - ᴇʀᴏsᴜɴ ᴏᴋᴜɴᴜ ᴀᴛᴀʀ."
-  await event.reply(helptext,
-                    buttons=(
-                      
+    await event.edit(f"⚙️ ᴍᴇʀʜᴀʙᴀ, ɪ̇şᴛᴇ ᴋᴏᴍᴜᴛʟᴀʀıᴍ ⚙️\n\n » /tag \n - 5 ᴋɪşɪʟɪᴋ ᴇᴛɪᴋᴇᴛ ᴏʟᴜşᴛᴜʀᴜʀ. \n » /otag \n - ᴋᴜʟʟᴀɴıᴄıʟᴀʀı sᴏʀᴜʏʟᴀ ᴇᴛɪᴋᴇᴛʟᴇʀ. \n » /ctag \n - ᴋᴜʟʟᴀɴıᴄıʟᴀʀı ʜᴏş sᴏ̈ᴢʟᴇʀʟᴇ ᴇᴛɪᴋᴇᴛʟᴇʀ. \n » /etag \n - ᴇᴍᴏᴊɪ ɪ̇ʟᴇ ᴇᴛɪᴋᴇᴛ ᴀᴛᴀʀ.\n » /tektag \n - ᴜ̈ʏᴇʟᴇʀɪ ᴛᴇᴋᴇʀ ᴛᴇᴋᴇʀ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /btag \n - ʙᴀʏʀᴀᴋʟı şᴇᴋɪʟᴅᴇ ᴜ̈ʏᴇʟᴇʀɪ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /admins \n - ᴀᴅᴍɪɴʟᴇʀɪ ᴅᴜ̈ᴢᴇɴʟɪ şᴇᴋɪʟᴅᴇ ᴇᴛɪᴋᴇᴛʟᴇʀ.\n » /slap \n - ʙɪ̇ʀ ᴋᴜʟʟᴀɴɪᴄɪʏɪ ᴛʀᴏʟʟᴇʀ.\n » /eros \n - ᴇʀᴏsᴜɴ ᴏᴋᴜɴᴜ ᴀᴛᴀʀ.", buttons=(
+
+                   
+                  [
+                      Button.inline("➡️ ɢᴇʀɪ", data="start")
+                    ]
+                 ),
+               link_preview=False)    
+
+
+@client.on(events.callbackquery.CallbackQuery(data="start"))
+async def start(event):
+    await event.edit(f"👋🏻 ᴍᴇʀʜᴀʙᴀ, ʙᴇɴ ᴀʜʀɪ! ʙᴀᴢı ᴋᴜʟʟᴀɴışʟı ᴏ̈ᴢᴇʟʟɪᴋʟᴇʀᴇ sᴀʜɪᴘ ᴛᴇʟᴇɢʀᴀᴍ ᴜ̈ʏᴇ ᴇᴛɪᴋᴇᴛʟᴇᴍᴇ ʙᴏᴛᴜʏᴜᴍ.\n\n📚 sɪᴢᴇ ʏᴀʀᴅɪᴍᴄɪ ᴏʟᴀʙɪʟᴍᴇᴍ ɪᴄ̧ɪɴ ᴀşşᴀɢ̆ɪᴅᴀᴋɪ ʙᴜᴛᴏɴʟᴀʀɪ ᴋᴜʟʟᴀɴɪɴ!", 
+                 buttons=(                  
+		                      
+                      [Button.url('➕ɢʀᴜʙᴀ ᴇᴋʟᴇ➕', f"https://t.me/{bot_username}?startgroup=a")],
                       [Button.url('📣ᴅᴇsᴛᴇᴋ📣', f"https://t.me/{support}")],
+                      [Button.inline("📚ᴋᴏᴍᴜᴛʟᴀʀ📚", data="help")],
                       [Button.url('🛡ᴏᴡɴᴇʀ🛡', 'https://t.me/rahmetiNC')],
+		                  
                     ),
                     link_preview=False
                    )
+
 
 @client.on(events.NewMessage(pattern='^(?i)/cancel'))
 async def cancel(event):
