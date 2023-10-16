@@ -79,7 +79,6 @@ async def help(event):
                    
                   [
                       Button.inline("📮 Etiket Komutlar", data="etiket")
-                      Button.inline("⛔️ Cancel", data="cancel")
                     ]
                  ),
                link_preview=False)   
