@@ -61,15 +61,14 @@ async def start(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
-    await event.edit(f"🕹 **Komut**: /tag\n📱 **Kullanım**: /tag (Metin)\n📄 **Açıklama**: Üyeleri 5'li Şekilde Etiketlemek İçindir.  "
+    await event.edit(f"🕹 **Komut**: /tag\n📱 **Kullanım**: /tag (Metin)\n📄 **Açıklama**: Üyeleri 5'li Şekilde Etiketlemek İçindir." , buttons=(
 
                    
                   [
                       Button.inline("➡️ ɢᴇʀɪ", data="start")
                     ]
-                ),
-                    link_preview=False
-                   )
+                 ),
+               link_preview=False)   
 
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def start(event):
