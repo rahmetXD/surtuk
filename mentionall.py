@@ -67,9 +67,9 @@ async def help(event):
                   [
                       Button.inline("➡️ ɢᴇʀɪ", data="start")
                     ]
-                 ),
-               link_preview=False)    
-                 )
+                ),
+                    link_preview=False
+                   )
 
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def start(event):
