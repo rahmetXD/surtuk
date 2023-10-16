@@ -162,20 +162,21 @@ async def mentionall(event):
   else:
     return await event.respond(responses["sebep"])
   
-  if mode == "text_on_cmd":
+if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"[{random.choice(bayrak)}](tg://user?id={usr.id}) "
+      usrtxt += f"[{random.choice(emoji)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
-   return await event.respond(responses["basarı"])
+       await event.respond("Etiketleme İşlemi Başarıyla Durduruldu!")
+       return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
         await asyncio.sleep(2)
         usrnum = 0
-        usrtxt = ""
+        usrtxt = """
 	
 @client.on(events.NewMessage(pattern='^(?i)/cancel'))
 async def cancel(event):
