@@ -44,6 +44,9 @@ etiketuye = []
 rxyzdev_tagTot = {}
 rxyzdev_initT = {}
 
+responses = {
+    "kanalgrup": "⛔️ Bu komutu gruplar ve kanallar için geçerli!"
+}
 
 
 @client.on(events.NewMessage(pattern="^/start$"))
@@ -133,13 +136,13 @@ soru = ['Naber?', 'Nerelerdesin Aşko?', 'Özledimmmmm', 'İyimisin?', 'Ayıcık
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("Bu komutu gruplar ve kanallar için geçerli!")
+   return await event.respond(responses["kanalgrup"])
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Bu Komutu Sadece Yöneticiler Kullana Bilir!")
+    return await event.respond("Bu Komutu Sadece Yöneticiler Kullana Bilir!")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
