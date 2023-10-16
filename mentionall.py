@@ -170,8 +170,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(bayrak)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
-          await event.respond(responses["basarı"])
-        return
+   return await event.respond(responses["sebeo"])
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
         await asyncio.sleep(2)
