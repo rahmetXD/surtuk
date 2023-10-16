@@ -59,7 +59,8 @@ async def start(event):
                     link_preview=False
                    )
 
-@client.on(events.callbackquery.CallbackQuery(data="help"))
+# Etiket Komutları Kısmı 
+@client.on(events.callbackquery.CallbackQuery(data="etiket"))
 async def help(event):
     await event.edit(f"🕹 **Komut**: /tag\n📱 **Kullanım**: /tag (Metin)\n📄 **Açıklama**: __Üyeleri 5'li Şekilde Etiketlemek İçindir__.\n\n🕹 **Komut**: /admins \n📱 **Kullanım**: /admins \n📄 **Açıklama**: __Adminleri Tekte Etiketlemek İçindir__." , buttons=(
 
@@ -70,6 +71,32 @@ async def help(event):
                  ),
                link_preview=False)   
 
+# Menü Komutlar Kısmı 
+@client.on(events.callbackquery.CallbackQuery(data="help"))
+async def help(event):
+    await event.edit(f"🕹 **Merhaba, İşte Komutlar!**" , buttons=(
+
+                   
+                  [
+                      Button.inline("📮 Etiket Komutlar", data="etiket")
+                      Button.inline("⛔️ Cancel", data="cancel")
+                    ]
+                 ),
+               link_preview=False)   
+
+# Cancel Kısmı 
+@client.on(events.callbackquery.CallbackQuery(data="cancel"))
+async def help(event):
+    await event.edit(f"⛔️ Etiket Ve Durdurma\n\n🕹 **Komut**: /cancel \n📄 **Açıklama**: __İşlem Dururma Komutudur__." , buttons=(
+
+                   
+                  [
+                      Button.inline("📮 Etiket Komutlar", data="start")
+                    ]
+                 ),
+               link_preview=False) 
+
+# Start Geri Tuşu
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def start(event):
     await event.edit("❤️ Merhaba, Ben **Ahri Tagger**!\n🏷 Gruptaki Kullanıcıları Etiketlemek İçin Tasarlandım.\nButonları Kullanarak Yardım Allabilirsin.",
