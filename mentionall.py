@@ -48,7 +48,7 @@ rxyzdev_initT = {}
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("❤️ Merhaba, Ben **Ahri Tagger**!\n🏷 Gruptaki Kullanıcıları Etiketlemek İçin Tasarlandım.\nButonları Kullanarak Yardım Allabilirsin.",
+  await event.reply("❤️ Merhaba, Ben **Ahri Tagger**!\n🏷 Gruptaki Kullanıcıları Etiketlemek İçin Tasarlandım, Butonları Kullanarak Yardım Allabilirsin.",
                     buttons=(                  
 		       
                        [Button.inline("🗄 Komutlar", data="help")],               
@@ -61,7 +61,7 @@ async def start(event):
 
 @client.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
-    await event.edit(f"🕹 **Komut**: /tag\n📱 **Kullanım**: /tag (Metin)\n📄 **Açıklama**: Üyeleri 5'li Şekilde Etiketlemek İçindir.\n\n 🕹 **Komut**: /admins \n📱 **Kullanım**: /admins \n📄 **Açıklama**: Adminleri Tekte Etiketlemek İçindir." , buttons=(
+    await event.edit(f"🕹 **Komut**: /tag\n📱 **Kullanım**: /tag (Metin)\n📄 **Açıklama**: ''Üyeleri 5'li Şekilde Etiketlemek İçindir'.\n\n🕹 **Komut**: /admins \n📱 **Kullanım**: /admins \n📄 **Açıklama**: Adminleri Tekte Etiketlemek İçindir." , buttons=(
 
                    
                   [
