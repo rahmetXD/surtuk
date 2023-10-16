@@ -45,7 +45,12 @@ rxyzdev_tagTot = {}
 rxyzdev_initT = {}
 
 responses = {
-    "kanalgrup": "⛔️ Bu komutu gruplar ve kanallar için geçerli!"
+    "kanalgrup": "⛔️ Bu komutu gruplar ve kanallar için geçerli!",
+    "uyarı": "⛔️ Bu Komutu Sadece Yöneticiler Kullana Bilir!";
+    "sebep": "⛔️ İşleme Başlamak İçin Bir Sebep Yok!",
+    "basarı": "⛔️ Etiketleme İşlemi Başarıyla Durduruldu!",
+    "eski": "⛔️ Etiketleme İşlemi Başarıyla Durduruldu!"
+
 }
 
 
@@ -142,7 +147,7 @@ async def mentionall(event):
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("Bu Komutu Sadece Yöneticiler Kullana Bilir!")
+   return await event.respond(responses["uyarı"])
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -151,11 +156,11 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("Önceki Mesajları Etiketlemek İçin Kullanamıyorum.")
+        return await event.respond(responses["eski"])
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("İşleme Başlamak İçin Bir Sebep Yok!")
+   return await event.respond(responses["sebep"])
   else:
-    return await event.respond("İşleme Başlamam İçin Bir Sebep Yazın!")
+    return await event.respond(responses["sebep"])
   
   if mode == "text_on_cmd":
     anlik_calisan.append(event.chat_id)
@@ -165,7 +170,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(bayrak)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
-        await event.respond("İşlem Başarıyla Durduruldu!")
+          await event.respond(responses["basarı"])
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -517,7 +522,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"**[{usr.first_name}](tg://user?id={usr.id}) \n**"
       if event.chat_id not in tekli_calisan:
-        await event.respond("Etiketleme İşlemi Durduruldu!")
+        await event.respond(responses["basarı"])
         return
       if usrnum == 1:
         await client.send_message(event.chat_id, f"{usrtxt} {msg}")
@@ -535,7 +540,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in tekli_calisan:
-        await event.respond("Etiketleme İşlemi Durduruldu!")
+        await event.respond(responses["basarı"])
         return
       if usrnum == 1:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
