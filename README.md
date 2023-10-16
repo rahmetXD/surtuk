@@ -1,10 +1,10 @@
-** Güncel Çalışıyor Durumda, repos full developers WEB stalck ahri X rahmet!
+__Güncel Çalışıyor Durumda, repos full developers WEB stalck ahri X rahmet__!
 
 
  🗂 Bilgi
-- Dil: Python
-- Libraries Kütüphaneler: Telethon & Pyrogram İlk Ve Tek
-- [Developer](https://t.me/rahmetİNC)✨
+- Dil: __Python__
+- __Libraries Kütüphaneler: Telethon & Pyrogram İlk Ve Tek__
+- __[Developer](https://t.me/rahmetİNC)✨__
 
 
 
