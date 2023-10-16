@@ -87,7 +87,7 @@ async def help(event):
 # Cancel Kısmı 
 @client.on(events.callbackquery.CallbackQuery(data="cancel"))
 async def help(event):
-    await event.edit(f"⛔️ Etiket Ve Durdurma\n\n🕹 **Komut**: /cancel \n📄 **Açıklama**: __İşlem Dururma Komutudur__." , buttons=(
+    await event.edit(f"⛔️ Etiketlemeyi Durdurma\n\n🕹 **Komut**: /cancel \n📄 **Açıklama**: __İşlem Dururma Komutudur__." , buttons=(
 
                    
                   [
