@@ -46,7 +46,7 @@ rxyzdev_initT = {}
 
 responses = {
     "kanalgrup": "⛔️ Bu komutu gruplar ve kanallar için geçerli!",
-    "uyarı": "⛔️ Bu Komutu Sadece Yöneticiler Kullana Bilir!";
+    "uyarı": "⛔️ Bu Komutu Sadece Yöneticiler Kullana Bilir!",
     "sebep": "⛔️ İşleme Başlamak İçin Bir Sebep Yok!",
     "basarı": "⛔️ Etiketleme İşlemi Başarıyla Durduruldu!",
     "eski": "⛔️ Etiketleme İşlemi Başarıyla Durduruldu!"
