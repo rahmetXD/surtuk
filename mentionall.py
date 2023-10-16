@@ -69,7 +69,7 @@ async def help(event):
                     ]
                  ),
                link_preview=False)    
-
+                 )
 
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def start(event):
